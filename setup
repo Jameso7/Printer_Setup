@@ -1,0 +1,10 @@
+http://localhost:631/
+
+https://www.howtogeek.com/169679/how-to-add-a-printer-to-your-raspberry-pi-or-other-linux-computer/
+
+https://github.com/klirichek/zj-58
+
+sudo su
+
+sudo nano /etc/cups/cupsd.conf
+
