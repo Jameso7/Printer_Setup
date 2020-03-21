@@ -1,0 +1,35 @@
+sudo apt-get install cups
+sudo usermod -a -G lpadmin pi
+sudo nano /etc/cups/cupsd.conf
+
+  # Only listen for connections from the local machine
+  # Listen localhost:631
+  Port 631
+  
+    < Location / >
+# Restrict access to the server...
+Order allow,deny
+Allow @local
+< /Location >
+
+< Location /admin >
+# Restrict access to the admin pages...
+Order allow,deny
+Allow @local
+< /Location >
+
+< Location /admin/conf >
+AuthType Default
+Require user @SYSTEM
+
+# Restrict access to the configuration files...
+Order allow,deny
+Allow @local
+< /Location >
+
+sudo /etc/init.d/cups restart
+
+http://localhost:631/
+Add Printer
+Unknown
+Zijadin printer and add it
